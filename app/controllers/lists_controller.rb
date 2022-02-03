@@ -12,12 +12,14 @@ class ListsController < ApplicationController
     # 4. トップ画面へリダイレクト
     redirect_to '/top'
   end
-  
+
   def index
     @lists = List.all
   end
 
- 
+  def show
+   @list = List.find(params[:id])
+  end
 
   private
   # ストロングパラメータ
